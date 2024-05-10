@@ -13,6 +13,7 @@ export default {
 				'primary-500': '#ff6b66',
 				'secondary-400': '#ffcd58',
 				'secondary-500': '#ffc132',
+				'progress-bar': '#ffa3a3',
 			},
 			backgroundImage: () => ({
 				'gradient-yellowred':
