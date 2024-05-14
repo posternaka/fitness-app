@@ -7,6 +7,7 @@ import { SelectedPage } from '@/shared/types';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
+
 function App() {
 	const [selectedPage, setSelectedPage] = useState<SelectedPage>(
 		SelectedPage.Home

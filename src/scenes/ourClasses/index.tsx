@@ -8,12 +8,12 @@ import Class from '@/scenes/ourClasses/Class';
 import TitleSection from '@/shared/TitleSection';
 import { SelectedPage, SlideType } from '@/shared/types';
 import { motion } from 'framer-motion';
+import 'swiper/css';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 const classes: Array<SlideType> = [
 	{
 		title: 'Weight Training Classes',
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
 		image: image1,
 	},
 	{
@@ -22,14 +22,10 @@ const classes: Array<SlideType> = [
 	},
 	{
 		title: 'Ab Core Classes',
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
 		image: image3,
 	},
 	{
 		title: 'Adventure Classes',
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
 		image: image4,
 	},
 	{
@@ -38,8 +34,6 @@ const classes: Array<SlideType> = [
 	},
 	{
 		title: 'Training Classes',
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
 		image: image6,
 	},
 ];
@@ -75,17 +69,19 @@ const OurClasses = ({ setSelectedPage }: Props) => {
 						</p>
 					</div>
 				</motion.div>
-				<div className='mt-10 h-[353px] w-full overflow-x-auto overflow-y-hidden'>
-					<ul className='w-[2800px] whitespace-nowrap'>
+				<div className='mt-10 w-full overflow-x-auto overflow-y-hidden'>
+					<Swiper spaceBetween={20} slidesPerView={2}>
 						{classes.map((it: SlideType, index) => (
-							<Class
-								key={`${it.title + index}`}
-								title={it.title}
-								description={it.description}
-								image={it.image}
-							/>
+							<SwiperSlide>
+								<Class
+									key={`${it.title + index}`}
+									title={it.title}
+									description={it.description}
+									image={it.image}
+								/>
+							</SwiperSlide>
 						))}
-					</ul>
+					</Swiper>
 				</div>
 			</motion.div>
 		</section>
